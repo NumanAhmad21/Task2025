@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drag & Drop Playground</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- jQuery and jQuery UI CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+</head>
+<body>
+
+  <div id="container">
+    <!-- Sidebar for dragging elements -->
+    <div id="sidebar">
+      <h3>Elements</h3>
+      <div class="draggable-element" data-type="text">Text</div>
+      <div class="draggable-element" data-type="image">Image</div>
+      <div class="draggable-element" data-type="shape">Shape</div>
+      <button id="saveBtn">Save</button>
+      <button id="loadBtn">Load</button>
+    </div>
+
+    <!-- Playground where elements are dropped -->
+    <div id="playground"></div>
+
+    <!-- Properties panel for selected element -->
+    <div id="properties">
+      <h3>Properties</h3>
+      <div id="propertiesContent">Select an element to edit its properties</div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

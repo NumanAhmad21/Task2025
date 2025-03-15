@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat Rooms - HTMX CRUD (Frontend Only)</title>
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>🌐 Chat Room Manager</h1>
+    <p>Effortlessly Create, Edit & Manage Chat Rooms</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Username Section -->
+    <section class="card">
+      <h2>👤 Enter Your Username</h2>
+      <div class="input-group">
+        <input type="text" id="username" placeholder="Enter your username..." />
+      </div>
+    </section>
+
+    <!-- Create Room Section -->
+    <section class="card">
+      <h2>➕ Create a New Chat Room</h2>
+      <form id="create-room-form" hx-post="/rooms" hx-target="#room-list" hx-swap="innerHTML">
+        <input type="hidden" name="owner" id="owner" />
+        <div class="input-group">
+          <input type="text" name="room_name" placeholder="Room Name" required />
+          <button class="btn-primary" type="submit">Create Room</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Room List Section -->
+    <section class="card">
+      <h2>💬 Available Chat Rooms</h2>
+      <div id="room-list" hx-get="/rooms" hx-trigger="load"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Chat Room CRUD | Built with HTMX</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>
